@@ -1,4 +1,27 @@
 using AutoMapper;
+using WebApi.Application.CreateActor;
+using WebApi.Application.CreateCustomer;
+using WebApi.Application.CreateDirector;
+using WebApi.Application.CreateGenre;
+using WebApi.Application.CreateMovie;
+using WebApi.Application.CreateOrder;
+using WebApi.Application.GetActor;
+using WebApi.Application.GetActorDetail;
+using WebApi.Application.GetCustomer;
+using WebApi.Application.GetCustomerDetail;
+using WebApi.Application.GetDetailMovie;
+using WebApi.Application.GetDetailOrder;
+using WebApi.Application.GetDirector;
+using WebApi.Application.GetDirectorDetail;
+using WebApi.Application.GetGenre;
+using WebApi.Application.GetGenreDetail;
+using WebApi.Application.GetMovie;
+using WebApi.Application.GetOrder;
+using WebApi.Application.UpdateActor;
+using WebApi.Application.UpdateCustomer;
+using WebApi.Application.UpdateDirector;
+using WebApi.Application.UpdateGenre;
+using WebApi.Application.UpdateMovie;
 using WebApi.Entities;
 
 namespace WebApi.Common
@@ -25,17 +48,12 @@ namespace WebApi.Common
              CreateMap<Genre , GenreViewModel>();
              CreateMap<Movie ,MovieViewModel>();
              CreateMap<Order , OrderViewModel>();
-             CreateMap<Actor_Movie, ActorMovieViewModel>();
              CreateMap<Actor, ActorDetailViewModel>();
              CreateMap<Director ,DirectorDetailViewModel >();
              CreateMap<Customer ,CustomerDetailViewModel >();
              CreateMap<Genre , GenreDetailViewModel>();
              CreateMap<Movie ,MovieDetailViewModel>();
              CreateMap<Order , OrderDetailViewModel>();
-             CreateMap<Actor_Movie, ActorDetailMovieViewModel>();
-
-             
-
             
         }
     }
