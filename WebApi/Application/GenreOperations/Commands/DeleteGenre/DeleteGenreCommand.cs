@@ -1,14 +1,14 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.DeleteGenre
+namespace WebApi.Application.GenreOperations.DeleteGenre
 {
-    public class DeleteGenre
+    public class DeleteGenreCommand
     {
 
         public readonly IMovieStoreDbContext _context;
         public int genreId;
-        public DeleteGenre(IMovieStoreDbContext context)
+        public DeleteGenreCommand(IMovieStoreDbContext context)
         {
             _context = context;
         }

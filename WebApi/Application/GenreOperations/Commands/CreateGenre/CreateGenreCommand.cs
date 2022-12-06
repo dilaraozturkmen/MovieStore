@@ -2,13 +2,13 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.CreateGenre{
-    public class CreateGenre
+namespace WebApi.Application.GenreOperations.CreateGenre{
+    public class CreateGenreCommand
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
         public CreateGenreModel Model;
-        public CreateGenre(IMovieStoreDbContext context, IMapper mapper)
+        public CreateGenreCommand(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

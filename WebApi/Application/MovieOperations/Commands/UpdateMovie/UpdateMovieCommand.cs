@@ -2,14 +2,14 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.UpdateMovie{
-    public class UpdateMovie
+namespace WebApi.Application.MovieOperations.UpdateMovie{
+    public class UpdateMovieCommand
     {
         public readonly IMovieStoreDbContext _context;
         public UpdateMovieModel Model;
         public int movieId;
         public readonly IMapper _mapper;
-        public UpdateMovie(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateMovieCommand(IMapper mapper, IMovieStoreDbContext context)
         {
             _mapper = mapper;
             _context = context;

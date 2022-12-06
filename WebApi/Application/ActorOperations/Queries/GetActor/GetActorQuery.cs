@@ -1,13 +1,13 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.GetActor
+namespace WebApi.Application.ActorOperations.GetActor
 {
-    public class GetActor
+    public class GetActorQuery
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
-        public GetActor(IMovieStoreDbContext context, IMapper mapper)
+        public GetActorQuery(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

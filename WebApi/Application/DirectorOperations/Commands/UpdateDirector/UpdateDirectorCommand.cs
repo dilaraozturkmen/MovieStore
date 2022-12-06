@@ -2,14 +2,14 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.UpdateDirector{
-    public class UpdateDirector
+namespace WebApi.Application.DirectorOperations.UpdateDirector{
+    public class UpdateDirectorCommand
     {
         public readonly IMovieStoreDbContext _context;
         public UpdateDirectorModel Model;
         public int directorId;
         public readonly IMapper _mapper;
-        public UpdateDirector(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateDirectorCommand(IMapper mapper, IMovieStoreDbContext context)
         {
             _mapper = mapper;
             _context = context;

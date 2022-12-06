@@ -1,14 +1,14 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.DeleteCustomer
+namespace WebApi.Application.CustomerOperations.DeleteCustomer
 {
-    public class DeleteCustomer
+    public class DeleteCustomerCommand
     {
 
         public readonly IMovieStoreDbContext _context;
         public int customerId;
-        public DeleteCustomer(IMovieStoreDbContext context)
+        public DeleteCustomerCommand(IMovieStoreDbContext context)
         {
             _context = context;
         }

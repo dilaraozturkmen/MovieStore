@@ -1,14 +1,14 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.GetCustomerDetail
+namespace WebApi.Application.CustomerOperations.GetCustomerDetail
 {
-    public class GetCustomerDetail
+    public class GetCustomerDetailQuery
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
         public int customerId;
-        public GetCustomerDetail(IMovieStoreDbContext context, IMapper mapper)
+        public GetCustomerDetailQuery(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

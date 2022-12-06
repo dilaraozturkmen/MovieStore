@@ -2,13 +2,13 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.CreateActor{
-    public class CreateActor
+namespace WebApi.Application.ActorOperations.CreateActor{
+    public class CreateActorCommand
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
         public CreateActorModel Model;
-        public CreateActor(IMovieStoreDbContext context, IMapper mapper)
+        public CreateActorCommand(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

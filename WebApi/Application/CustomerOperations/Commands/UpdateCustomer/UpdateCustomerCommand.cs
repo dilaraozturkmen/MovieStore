@@ -2,30 +2,31 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.UpdateActor{
-    public class UpdateActor
+namespace WebApi.Application.CustomerOperations.UpdateCustomer{
+    public class UpdateCustomerCommand
     {
         public readonly IMovieStoreDbContext _context;
-        public UpdateActorModel Model;
-        public int actorId;
+        public UpdateCustomerModel Model;
+        public int customerId;
         public readonly IMapper _mapper;
-        public UpdateActor(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateCustomerCommand(IMapper mapper, IMovieStoreDbContext context)
         {
             _mapper = mapper;
             _context = context;
         }
         public void Handle(){
-            var actor = _context.Actors.SingleOrDefault(x=> x.id == actorId );
-            if(actor is null)
+            var customer = _context.Actors.SingleOrDefault(x=> x.id == customerId );
+            if(customer is null)
                 throw new InvalidOperationException("kayıt bulunamadı");
-            _mapper.Map(Model , actor);
+            _mapper.Map(Model ,customer);
             _context.SaveChanges();
         }
 
     }
-    public class UpdateActorModel
+    public class UpdateCustomerModel
     {
         public string name { get; set; }
         public string surname { get; set; }
+        public int favoriteGenreId { get; set; }
     }
 }

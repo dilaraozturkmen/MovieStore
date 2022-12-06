@@ -1,14 +1,14 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.GetDirectorDetail
+namespace WebApi.Application.DirectorOperations.GetDirectorDetail
 {
-    public class GetDetailDirector
+    public class GetDetailDirectorQuery
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
         public int directorId;
-        public GetDetailDirector(IMovieStoreDbContext context, IMapper mapper)
+        public GetDetailDirectorQuery(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

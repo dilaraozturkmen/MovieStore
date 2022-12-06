@@ -2,13 +2,13 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.CreateMovie{
-    public class CreateMovie
+namespace WebApi.Application.MovieOperations.CreateMovie{
+    public class CreateMovieCommand
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
         public CreateMovieModel Model;
-        public CreateMovie(IMovieStoreDbContext context, IMapper mapper)
+        public CreateMovieCommand(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

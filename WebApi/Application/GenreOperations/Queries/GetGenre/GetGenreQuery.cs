@@ -1,13 +1,13 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.GetGenre
+namespace WebApi.Application.GenreOperations.GetGenre
 {
-    public class GetGenre
+    public class GetGenreQuery
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
-        public GetGenre(IMovieStoreDbContext context, IMapper mapper)
+        public GetGenreQuery(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
@@ -21,7 +21,7 @@ namespace WebApi.Application.GetGenre
     }
     public class GenreViewModel
     {
-        public string name { get; set; }
+        public string Name { get; set; }
         
       
 

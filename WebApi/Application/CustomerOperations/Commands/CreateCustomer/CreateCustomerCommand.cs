@@ -2,13 +2,13 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.CreateCustomer{
-    public class CreateCustomer
+namespace WebApi.Application.CustomerOperations.CreateCustomer{
+    public class CreateCustomerCommand
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
         public CreateCustomerModel Model;
-        public CreateCustomer(IMovieStoreDbContext context, IMapper mapper)
+        public CreateCustomerCommand(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

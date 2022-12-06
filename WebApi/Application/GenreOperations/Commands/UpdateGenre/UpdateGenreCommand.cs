@@ -2,14 +2,14 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.UpdateGenre{
-    public class UpdateGenre
+namespace WebApi.Application.GenreOperations.UpdateGenre{
+    public class UpdateGenreCommand
     {
         public readonly IMovieStoreDbContext _context;
         public UpdateGenreModel Model;
         public int genreId;
         public readonly IMapper _mapper;
-        public UpdateGenre(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateGenreCommand(IMapper mapper, IMovieStoreDbContext context)
         {
             _mapper = mapper;
             _context = context;
@@ -25,6 +25,6 @@ namespace WebApi.Application.UpdateGenre{
     }
     public class UpdateGenreModel
     {
-        public string name { get; set; }
+        public string Name { get; set; }
     }
 }

@@ -1,13 +1,13 @@
 using WebApi.DBOperations;
 
-namespace WebApi.Application.DeleteMovie
+namespace WebApi.Application.MovieOperations.DeleteMovie
 {
-    public class DeleteMovie
+    public class DeleteMovieCommand
     {
 
         public readonly IMovieStoreDbContext _context;
         public int movieId;
-        public DeleteMovie(IMovieStoreDbContext context)
+        public DeleteMovieCommand(IMovieStoreDbContext context)
         {
             _context = context;
         }

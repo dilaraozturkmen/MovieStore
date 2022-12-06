@@ -2,13 +2,13 @@ using AutoMapper;
 using WebApi.DBOperations;
 using WebApi.Entities;
 
-namespace WebApi.Application.CreateDirector{
-    public class CreateDirector
+namespace WebApi.Application.DirectorOperations.CreateDirector{
+    public class CreateDirectorCommand
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
         public CreateDirectorModel Model;
-        public CreateDirector(IMovieStoreDbContext context, IMapper mapper)
+        public CreateDirectorCommand(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

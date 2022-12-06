@@ -1,14 +1,14 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.GetGenreDetail
+namespace WebApi.Application.GenreOperations.GetGenreDetail
 {
-    public class GetGenreDetail
+    public class GetGenreDetailQuery
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
         public int genreId;
-        public GetGenreDetail(IMovieStoreDbContext context, IMapper mapper)
+        public GetGenreDetailQuery(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

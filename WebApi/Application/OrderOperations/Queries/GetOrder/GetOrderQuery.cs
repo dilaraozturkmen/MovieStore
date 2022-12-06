@@ -1,13 +1,13 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.GetOrder
+namespace WebApi.Application.OrderOperations.GetOrder
 {
-    public class GetOrder
+    public class GetDetailOrderQuery
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;
-        public GetOrder(IMovieStoreDbContext context, IMapper mapper)
+        public GetDetailOrderQuery(IMovieStoreDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

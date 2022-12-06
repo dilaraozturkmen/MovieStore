@@ -1,13 +1,13 @@
 using WebApi.DBOperations;
 
-namespace WebApi.Application.DeleteOrder
+namespace WebApi.Application.OrderOperations.DeleteOrder
 {
-    public class DeleteOrder
+    public class DeleteOrderCommand
     {
 
         public readonly IMovieStoreDbContext _context;
         public int orderId;
-        public DeleteOrder(IMovieStoreDbContext context)
+        public DeleteOrderCommand(IMovieStoreDbContext context)
         {
             _context = context;
         }

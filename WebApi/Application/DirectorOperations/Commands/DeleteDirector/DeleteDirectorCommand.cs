@@ -1,14 +1,14 @@
 using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.DeleteDirector
+namespace WebApi.Application.DirectorOperations.DeleteDirector
 {
-    public class DeleteDirector
+    public class DeleteDirectorCommand
     {
 
         public readonly IMovieStoreDbContext _context;
         public int directorId;
-        public DeleteDirector(IMovieStoreDbContext context)
+        public DeleteDirectorCommand(IMovieStoreDbContext context)
         {
             _context = context;
         }

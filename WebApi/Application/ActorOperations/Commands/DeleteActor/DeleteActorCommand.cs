@@ -1,14 +1,13 @@
-using AutoMapper;
 using WebApi.DBOperations;
 
-namespace WebApi.Application.DeleteActor
+namespace WebApi.Application.ActorOperations.DeleteActor
 {
-    public class DeleteActor
+    public class DeleteActorCommand
     {
 
         public readonly IMovieStoreDbContext _context;
         public int actorId;
-        public DeleteActor(IMovieStoreDbContext context)
+        public DeleteActorCommand(IMovieStoreDbContext context)
         {
             _context = context;
         }
