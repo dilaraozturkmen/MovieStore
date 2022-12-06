@@ -15,7 +15,7 @@ namespace WebApi.Application.DirectorOperations.DeleteDirector
         public void Handle()
         {
             var director= _context.Directors.SingleOrDefault(x => x.id == directorId);
-            if(director is not null)
+            if(director is null)
                 throw new InvalidOperationException("Kayıt bulunamadı");
             _context.Directors.Remove(director);
             _context.SaveChanges();

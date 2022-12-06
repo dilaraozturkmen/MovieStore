@@ -48,13 +48,13 @@ namespace WebApi.Common
              CreateMap<Customer ,CustomerViewModel >();
              CreateMap<Genre , GenreViewModel>();
              CreateMap<Movie ,MovieViewModel>();
-             CreateMap<Order , OrderViewModel>();
-             CreateMap<Actor, ActorDetailViewModel>();
+             CreateMap<Order , OrderViewModel>().ForMember(dest => dest.Movie, opt => opt.MapFrom(src=>src.Movie.name.ToString())).ForMember(dest => dest.Customer, opt => opt.MapFrom(src=>src.Customer.name.ToString() + " " + src.Customer.surname.ToString()));
+             CreateMap<Actor_Movie, ActorDetailViewModel>().ForMember(dest => dest.Actor, opt => opt.MapFrom(src=>src.Actor.name.ToString() + " " + src.Actor.surname.ToString())).ForMember(dest => dest.Movie, opt => opt.MapFrom(src=>src.Movie.name.ToString()));
              CreateMap<Director ,DirectorDetailViewModel >();
              CreateMap<Customer ,CustomerDetailViewModel >();
              CreateMap<Genre , GenreDetailViewModel>();
-             CreateMap<Movie ,MovieDetailViewModel>();
-             CreateMap<Order , OrderDetailViewModel>();
+             CreateMap<Actor_Movie ,MovieDetailViewModel>().ForMember(dest => dest.Actor, opt => opt.MapFrom(src=>src.Actor.name.ToString() + " " + src.Actor.surname.ToString())).ForMember(dest => dest.Movie, opt => opt.MapFrom(src=>src.Movie.name.ToString()));
+             CreateMap<Order , OrderDetailViewModel>().ForMember(dest => dest.Movie, opt => opt.MapFrom(src=>src.Movie.name.ToString())).ForMember(dest => dest.Customer, opt => opt.MapFrom(src=>src.Customer.name.ToString() + " " + src.Customer.surname.ToString()));
             
         }
     }

@@ -9,7 +9,7 @@ namespace WebApi.Application.MovieOperations.UpdateMovie{
         public UpdateMovieModel Model;
         public int movieId;
         public readonly IMapper _mapper;
-        public UpdateMovieCommand(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateMovieCommand( IMovieStoreDbContext context ,IMapper mapper)
         {
             _mapper = mapper;
             _context = context;

@@ -9,10 +9,7 @@ namespace WebApi.DBOperations
         {
              using (var context = new MovieStoreDbContext(serviceProvider.GetRequiredService<DbContextOptions<MovieStoreDbContext>>()))
            {
-                if(context.Movies.Any())
-                {
-                    return;
-                }
+                
                 context.Genres.AddRange(
                     new Genre {
                         id= 1,
@@ -134,6 +131,7 @@ namespace WebApi.DBOperations
                         movieId = 3
                     }
                 );
+                context.SaveChanges();
 
 
            }

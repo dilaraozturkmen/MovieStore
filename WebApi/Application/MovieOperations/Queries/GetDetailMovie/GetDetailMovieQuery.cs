@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using WebApi.DBOperations;
 
 namespace WebApi.Application.MovieOperations.GetDetailMovie
@@ -13,22 +14,20 @@ namespace WebApi.Application.MovieOperations.GetDetailMovie
             _context = context;
             _mapper = mapper;
         }
-        public MovieDetailViewModel Handle()
+        public List<MovieDetailViewModel> Handle()
         {
-            var movie = _context.actorMovies.SingleOrDefault(x=> x.id == movieId);
+            var movie = _context.actorMovies.Include(x =>x.Actor).Include(x => x.Movie).Where(x=> x.movieId == movieId);
             if (movie is null)
                 throw new InvalidOperationException(" Oyuncu bulanamadı");
           
-            MovieDetailViewModel vm =_mapper.Map<MovieDetailViewModel>(movie);
+            List<MovieDetailViewModel> vm =_mapper.Map<List<MovieDetailViewModel>>(movie);
             return vm;
 
         }
     }
     public class MovieDetailViewModel
     {
-        public string name { get; set; }
-        public double price { get; set; } 
-        public int genreId  { get; set; }
-        public int directorId { get; set; }
+        public string Actor { get; set; }
+        public string Movie { get; set; }
     }
 }

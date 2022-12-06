@@ -9,7 +9,7 @@ namespace WebApi.Application.DirectorOperations.UpdateDirector{
         public UpdateDirectorModel Model;
         public int directorId;
         public readonly IMapper _mapper;
-        public UpdateDirectorCommand(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateDirectorCommand( IMovieStoreDbContext context ,IMapper mapper)
         {
             _mapper = mapper;
             _context = context;

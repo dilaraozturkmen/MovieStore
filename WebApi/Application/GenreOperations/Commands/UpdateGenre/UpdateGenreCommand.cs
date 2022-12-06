@@ -9,7 +9,7 @@ namespace WebApi.Application.GenreOperations.UpdateGenre{
         public UpdateGenreModel Model;
         public int genreId;
         public readonly IMapper _mapper;
-        public UpdateGenreCommand(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateGenreCommand( IMovieStoreDbContext context ,IMapper mapper)
         {
             _mapper = mapper;
             _context = context;

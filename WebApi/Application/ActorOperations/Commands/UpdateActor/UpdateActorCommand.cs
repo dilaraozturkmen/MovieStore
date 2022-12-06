@@ -9,7 +9,7 @@ namespace WebApi.Application.ActorOperations.UpdateActor{
         public UpdateActorModel Model;
         public int actorId;
         public readonly IMapper _mapper;
-        public UpdateActorCommand(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateActorCommand( IMovieStoreDbContext context , IMapper mapper)
         {
             _mapper = mapper;
             _context = context;
@@ -25,7 +25,7 @@ namespace WebApi.Application.ActorOperations.UpdateActor{
     }
     public class UpdateActorModel
     {
-        public string name { get; set; }
-        public string surname { get; set; }
+        public string? name { get; set; }
+        public string? surname { get; set; }
     }
 }

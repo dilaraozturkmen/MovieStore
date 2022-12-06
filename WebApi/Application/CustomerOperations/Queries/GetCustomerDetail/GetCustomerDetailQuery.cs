@@ -3,7 +3,7 @@ using WebApi.DBOperations;
 
 namespace WebApi.Application.CustomerOperations.GetCustomerDetail
 {
-    public class GetCustomerDetailQuery
+    public class GetCustomerDetailQuery 
     {
         public readonly IMovieStoreDbContext _context;
         public readonly IMapper _mapper;

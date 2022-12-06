@@ -14,7 +14,7 @@ namespace WebApi.Application.OrderOperations.DeleteOrder
         public void Handle()
         {
             var order= _context.Orders.SingleOrDefault(x => x.id == orderId);
-            if(order is not null)
+            if(order is null)
                 throw new InvalidOperationException("Kayıt bulunamadı");
             _context.Orders.Remove(order);
             _context.SaveChanges();

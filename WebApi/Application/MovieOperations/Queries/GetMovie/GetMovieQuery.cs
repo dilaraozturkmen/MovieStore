@@ -14,7 +14,7 @@ namespace WebApi.Application.MovieOperations.GetMovie
         }
         public List<MovieViewModel> Handle()
         {
-            var movies = _context.actorMovies.OrderBy(X => X.id);
+            var movies = _context.Movies.OrderBy(X => X.id);
             List<MovieViewModel> returnobj = _mapper.Map<List<MovieViewModel>>(movies);
             return returnobj;
         }

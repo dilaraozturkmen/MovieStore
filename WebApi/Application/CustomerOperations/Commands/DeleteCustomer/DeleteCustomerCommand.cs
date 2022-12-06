@@ -15,7 +15,7 @@ namespace WebApi.Application.CustomerOperations.DeleteCustomer
         public void Handle()
         {
             var customer= _context.Customers.SingleOrDefault(x => x.id == customerId);
-            if(customer is not null)
+            if(customer is  null)
                 throw new InvalidOperationException("Kayıt bulunamadı");
             _context.Customers.Remove(customer);
             _context.SaveChanges();

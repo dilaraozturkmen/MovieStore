@@ -14,7 +14,7 @@ namespace WebApi.Application.GenreOperations.GetGenre
         }
         public List<GenreViewModel> Handle()
         {
-            var genres = _context.Directors.OrderBy(X => X.id);
+            var genres = _context.Genres.OrderBy(X => X.id);
             List<GenreViewModel> returnobj = _mapper.Map<List<GenreViewModel>>(genres);
             return returnobj;
         }

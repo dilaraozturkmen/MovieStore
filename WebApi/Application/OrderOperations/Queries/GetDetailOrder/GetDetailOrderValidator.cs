@@ -7,7 +7,7 @@ namespace Webapi.Application.OrderOperations.GetDetailOrder
     {
         public GetDetailOrderValidator()
         {
-            RuleFor(command => command.orderId).NotEmpty().GreaterThan(0);
+            RuleFor(command => command.customerId).NotEmpty().GreaterThan(0);
 
         }
 

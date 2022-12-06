@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using WebApi.DBOperations;
 
 namespace WebApi.Application.ActorOperations.GetActorDetail
@@ -15,18 +16,22 @@ namespace WebApi.Application.ActorOperations.GetActorDetail
         }
         public ActorDetailViewModel Handle()
         {
-            var actor = _context.actorMovies.SingleOrDefault(x=> x.id == actorId);
+            var actor = _context.actorMovies.Include(x => x.Actor).Include(x => x.Movie).Where(x=> x.actorId == actorId).SingleOrDefault();
+            
             if (actor is null)
                 throw new InvalidOperationException(" Oyuncu bulanamadı");
           
             ActorDetailViewModel vm =_mapper.Map<ActorDetailViewModel>(actor);
-            return vm;
 
+            return vm;
+            
         }
     }
     public class ActorDetailViewModel
     {
-        public int actorId { get; set; }
-        public int movieId { get; set; }
+       
+        public int id { get; set; }
+        public string Actor{ get; set; }
+        public string Movie { get; set; }
     }
 }

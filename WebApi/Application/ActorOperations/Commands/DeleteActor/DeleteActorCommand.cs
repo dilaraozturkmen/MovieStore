@@ -14,7 +14,7 @@ namespace WebApi.Application.ActorOperations.DeleteActor
         public void Handle()
         {
             var actor = _context.Actors.SingleOrDefault(x => x.id == actorId);
-            if(actor is not null)
+            if(actor is null)
                 throw new InvalidOperationException("Kayıt bulunamadı");
             _context.Actors.Remove(actor);
             _context.SaveChanges();

@@ -9,13 +9,13 @@ namespace WebApi.Application.CustomerOperations.UpdateCustomer{
         public UpdateCustomerModel Model;
         public int customerId;
         public readonly IMapper _mapper;
-        public UpdateCustomerCommand(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateCustomerCommand( IMovieStoreDbContext context ,IMapper mapper)
         {
             _mapper = mapper;
             _context = context;
         }
         public void Handle(){
-            var customer = _context.Actors.SingleOrDefault(x=> x.id == customerId );
+            var customer = _context.Customers.SingleOrDefault(x=> x.id == customerId );
             if(customer is null)
                 throw new InvalidOperationException("kayıt bulunamadı");
             _mapper.Map(Model ,customer);

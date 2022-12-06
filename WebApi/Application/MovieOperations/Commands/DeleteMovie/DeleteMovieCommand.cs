@@ -14,7 +14,7 @@ namespace WebApi.Application.MovieOperations.DeleteMovie
         public void Handle()
         {
             var movie= _context.Movies.SingleOrDefault(x => x.id == movieId);
-            if(movie is not null)
+            if(movie is null)
                 throw new InvalidOperationException("Kayıt bulunamadı");
             _context.Movies.Remove(movie);
             _context.SaveChanges();

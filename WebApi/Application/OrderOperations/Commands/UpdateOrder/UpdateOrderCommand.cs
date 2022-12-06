@@ -9,7 +9,7 @@ namespace WebApi.Application.OrderOperations.UpdateOrder{
         public UpdateOrderModel Model;
         public int orderId;
         public readonly IMapper _mapper;
-        public UpdateOrderCommand(IMapper mapper, IMovieStoreDbContext context)
+        public UpdateOrderCommand( IMovieStoreDbContext context ,IMapper mapper)
         {
             _mapper = mapper;
             _context = context;
